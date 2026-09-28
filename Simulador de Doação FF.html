@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação Oficial de Contas Raras Free Fire - Projeto Comunidade</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ffGold: '#FFB800',
+                        ffRed: '#FF2A2A',
+                        ffOrange: '#FF6B00',
+                        ffPurple: '#8B5CF6',
+                        scamAlert: '#E11D48'
+                    },
+                    fontFamily: {
+                        gaming: ['Orbitron', 'sans-serif'],
+                        subheading: ['Rajdhani', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Modern High-End Gaming Effects */
+        .glow-text-orange {
+            text-shadow: 0 0 20px rgba(255, 107, 0, 0.8), 0 0 40px rgba(255, 107, 0, 0.4);
+        }
+        .glow-text-gold {
+            text-shadow: 0 0 18px rgba(255, 184, 0, 0.9), 0 0 35px rgba(255, 184, 0, 0.5);
+        }
+        .glow-box-orange {
+            box-shadow: 0 0 30px -5px rgba(255, 107, 0, 0.6), inset 0 0 20px rgba(255, 107, 0, 0.2);
+        }
+        .glow-box-card {
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 0 0 15px 0 rgba(255, 107, 0, 0.3);
+        }
+        .glow-box-red {
+            box-shadow: 0 0 35px rgba(255, 42, 42, 0.7);
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Shimmer effect for fake claim buttons */
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+        .animate-shimmer {
+            animation: shimmer 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-body min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-ffOrange selection:text-white">
+
+    <!-- CANVAS BACKGROUND PARTICLES -->
+    <canvas id="bgParticles" class="fixed inset-0 pointer-events-none z-0 opacity-50"></canvas>
+
+    <!-- Top Fake Banner Notification -->
+    <div id="fakeBanner" class="relative z-20 bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 text-slate-950 font-black text-xs md:text-sm py-2 px-4 text-center shadow-lg flex items-center justify-center gap-2 animate-pulse tracking-wide">
+        <i class="fa-solid fa-gift text-lg animate-bounce"></i>
+        <span>PROJETO DOAÇÃO BRASIL: 2.500 CONTAS VETERANAS ABANDONADAS DISPONÍVEIS GRATUITAMENTE!</span>
+        <i class="fa-solid fa-fire text-lg"></i>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="relative z-10 max-w-5xl mx-auto w-full p-4 md:p-6 my-auto">
+
+        <!-- ==========================================
+             PASSO 1: LANDING PAGE DE DOAÇÃO DE CONTAS
+             ========================================== -->
+        <section id="step1" class="space-y-8 text-center transition-all duration-500">
+            
+            <!-- Hero Badge & Title -->
+            <div class="space-y-3">
+                <div class="inline-flex items-center gap-2 bg-slate-900/90 border border-amber-500/50 rounded-full px-4 py-1.5 text-xs text-amber-400 font-subheading tracking-widest uppercase backdrop-blur-md shadow-lg shadow-amber-500/10">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span class="font-bold">SISTEMA DE RESGATE AUTOMÁTICO &bull; SERVIDOR OFICIAL</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-6xl font-gaming font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-500 to-red-500 uppercase glow-text-orange leading-tight">
+                    Doação de Contas FF
+                </h1>
+                
+                <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
+                    Jogadores veteranos que se aposentaram do Free Fire doaram suas contas para a comunidade! Escolha uma das contas gemadas abaixo e resgate <strong class="text-amber-400 font-bold">100% de graça</strong> para o seu dispositivo.
+                </p>
+            </div>
+
+            <!-- Fake Stock Progress Indicator -->
+            <div class="max-w-xl mx-auto bg-slate-900/90 border border-slate-800 p-4 rounded-2xl backdrop-blur-md space-y-2">
+                <div class="flex justify-between text-xs font-gaming font-bold">
+                    <span class="text-amber-400 flex items-center gap-1.5">
+                        <i class="fa-solid fa-fire-flame-curved text-orange-500"></i> CONTAS RESTANTES HOJE
+                    </span>
+                    <span class="text-red-400 font-mono">APENAS 4 UNIDADES!</span>
+                </div>
+                <div class="w-full bg-slate-950 rounded-full h-3 p-0.5 border border-slate-800 overflow-hidden">
+                    <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 h-full rounded-full w-[88%] animate-pulse"></div>
+                </div>
+                <p class="text-[11px] text-slate-400 text-right">88% das contas já foram doadas nas últimas 2 horas.</p>
+            </div>
+
+            <!-- ACCOUNTS CAROUSEL / GRID SELECTOR -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
+                
+                <!-- CARD CONTA 1 -->
+                <div class="glass-panel border-2 border-amber-500/40 rounded-2xl p-5 hover:border-amber-400 transition-all duration-300 glow-box-card relative overflow-hidden flex flex-col justify-between group">
+                    <div class="absolute top-3 right-3 z-10 bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 font-gaming font-black text-[10px] px-3 py-1 rounded-full uppercase shadow-md">
+                        Mestre Lvl 78
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Widescreen 16:9 Aspect Ratio Container -->
+                        <div class="relative aspect-video w-full rounded-xl overflow-hidden border border-amber-500/30 bg-slate-950">
+                            <!-- Image with onerror fallback -->
+                            <img src="conta.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/f59e0b?text=CONTA+ANGELICAL+LVL+78';" alt="Conta Angelical Rara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between z-10">
+                                <span class="bg-slate-900/90 text-amber-300 border border-amber-500/40 text-xs font-bold px-2.5 py-1 rounded-lg font-gaming flex items-center gap-1">
+                                    <i class="fa-solid fa-gem text-cyan-400"></i> 7 Diams
+                                </span>
+                                <span class="bg-emerald-500/90 text-slate-950 text-xs font-black px-2.5 py-1 rounded-lg font-gaming">
+                                    GRÁTIS
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-gaming font-bold text-slate-100 group-hover:text-amber-400 transition-colors">
+                                Conta Calça Angelical + Passe Antigo
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Doador: <span class="text-slate-300 font-medium">@Gabriel_FF_Aposentado</span> &bull; Criada na Season 2
+                            </p>
+                        </div>
+
+                        <!-- Highlights Badges -->
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="bg-slate-800/80 text-amber-300 px-2.5 py-1 rounded-md border border-slate-700">Calça Angelical Azul</span>
+                            <span class="bg-slate-800/80 text-cyan-300 px-2.5 py-1 rounded-md border border-slate-700">AK-47 Chama Dragão</span>
+                            <span class="bg-slate-800/80 text-emerald-300 px-2.5 py-1 rounded-md border border-slate-700">Passe Hip Hop</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button onclick="selectAccountAndClaim('Conta Angelical Mestre LVL 78', 'conta.jpg', '7')" class="mt-6 w-full py-3.5 px-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-gaming font-black text-xs md:text-sm tracking-wider uppercase rounded-xl shadow-lg shadow-orange-500/30 transition-all transform group-hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden">
+                        <span class="absolute inset-0 bg-white/20 -skew-x-12 animate-shimmer pointer-events-none"></span>
+                        <i class="fa-solid fa-gift text-base"></i>
+                        <span>RESGATAR ESTA CONTA GRÁTIS</span>
+                    </button>
+                </div>
+
+                <!-- CARD CONTA 2 -->
+                <div class="glass-panel border-2 border-orange-500/40 rounded-2xl p-5 hover:border-orange-400 transition-all duration-300 glow-box-card relative overflow-hidden flex flex-col justify-between group">
+                    <div class="absolute top-3 right-3 z-10 bg-gradient-to-r from-red-600 to-orange-500 text-white font-gaming font-black text-[10px] px-3 py-1 rounded-full uppercase shadow-md">
+                        Desafiante Lvl 72
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Widescreen 16:9 Aspect Ratio Container -->
+                        <div class="relative aspect-video w-full rounded-xl overflow-hidden border border-orange-500/30 bg-slate-950">
+                            <!-- Image with onerror fallback -->
+                            <img src="conta1.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/ff6b00?text=CONTA+PASSE+SEASON+1';" alt="Conta Gemada VIP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between z-10">
+                                <span class="bg-slate-900/90 text-amber-300 border border-amber-500/40 text-xs font-bold px-2.5 py-1 rounded-lg font-gaming flex items-center gap-1">
+                                    <i class="fa-solid fa-gem text-cyan-400"></i> 0 Diams
+                                </span>
+                                <span class="bg-emerald-500/90 text-slate-950 text-xs font-black px-2.5 py-1 rounded-lg font-gaming">
+                                    GRÁTIS
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-gaming font-bold text-slate-100 group-hover:text-orange-400 transition-colors">
+                                Conta Gemada Season 1 + Bandeirão
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Doador: <span class="text-slate-300 font-medium">@Lucas_Pro_Gamer</span> &bull; Coleção Completa
+                            </p>
+                        </div>
+
+                        <!-- Highlights Badges -->
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="bg-slate-800/80 text-amber-300 px-2.5 py-1 rounded-md border border-slate-700">Passe 1ª Temporada</span>
+                            <span class="bg-slate-800/80 text-purple-300 px-2.5 py-1 rounded-md border border-slate-700">Emote do Bandeirão</span>
+                            <span class="bg-slate-800/80 text-red-300 px-2.5 py-1 rounded-md border border-slate-700">M1887 Punho de Fogo</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button onclick="selectAccountAndClaim('Conta Gemada Season 1 VIP', 'conta1.jpg', '0')" class="mt-6 w-full py-3.5 px-4 bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 hover:from-orange-400 hover:to-red-400 text-slate-950 font-gaming font-black text-xs md:text-sm tracking-wider uppercase rounded-xl shadow-lg shadow-red-500/30 transition-all transform group-hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden">
+                        <span class="absolute inset-0 bg-white/20 -skew-x-12 animate-shimmer pointer-events-none"></span>
+                        <i class="fa-solid fa-bolt text-base"></i>
+                        <span>RESGATAR ESTA CONTA GRÁTIS</span>
+                    </button>
+                </div>
+
+                <!-- CARD CONTA 3 -->
+                <div class="glass-panel border-2 border-purple-500/40 rounded-2xl p-5 hover:border-purple-400 transition-all duration-300 glow-box-card relative overflow-hidden flex flex-col justify-between group">
+                    <div class="absolute top-3 right-3 z-10 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-gaming font-black text-[10px] px-3 py-1 rounded-full uppercase shadow-md">
+                        Mestre Lvl 84
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Widescreen 16:9 Aspect Ratio Container -->
+                        <div class="relative aspect-video w-full rounded-xl overflow-hidden border border-purple-500/30 bg-slate-950">
+                            <!-- Image with onerror fallback -->
+                            <img src="conta2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/8b5cf6?text=CONTA+ANGELICAL+VERMELHA';" alt="Conta Angelical Vermelha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between z-10">
+                                <span class="bg-slate-900/90 text-amber-300 border border-amber-500/40 text-xs font-bold px-2.5 py-1 rounded-lg font-gaming flex items-center gap-1">
+                                    <i class="fa-solid fa-gem text-cyan-400"></i> 0 Diams
+                                </span>
+                                <span class="bg-emerald-500/90 text-slate-950 text-xs font-black px-2.5 py-1 rounded-lg font-gaming">
+                                    GRÁTIS
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-gaming font-bold text-slate-100 group-hover:text-purple-400 transition-colors">
+                                Conta Angelical Vermelha + Dunk Master
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Doador: <span class="text-slate-300 font-medium">@Victor_Nobru_Fan</span> &bull; Coleção de Armas Evolutivas
+                            </p>
+                        </div>
+
+                        <!-- Highlights Badges -->
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="bg-slate-800/80 text-rose-300 px-2.5 py-1 rounded-md border border-slate-700">Calça Angelical Vermelha</span>
+                            <span class="bg-slate-800/80 text-purple-300 px-2.5 py-1 rounded-md border border-slate-700">Dunk Master Original</span>
+                            <span class="bg-slate-800/80 text-amber-300 px-2.5 py-1 rounded-md border border-slate-700">MP40 Cobra Lvl Max</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button onclick="selectAccountAndClaim('Conta Full Passe Lvl 84', 'conta2.jpg', '0')" class="mt-6 w-full py-3.5 px-4 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:from-purple-500 hover:to-pink-500 text-slate-950 font-gaming font-black text-xs md:text-sm tracking-wider uppercase rounded-xl shadow-lg shadow-purple-500/30 transition-all transform group-hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden">
+                        <span class="absolute inset-0 bg-white/20 -skew-x-12 animate-shimmer pointer-events-none"></span>
+                        <i class="fa-solid fa-fire-flame-curved text-base"></i>
+                        <span>RESGATAR ESTA CONTA GRÁTIS</span>
+                    </button>
+                </div>
+
+                <!-- CARD CONTA 4 -->
+                <div class="glass-panel border-2 border-red-500/40 rounded-2xl p-5 hover:border-red-400 transition-all duration-300 glow-box-card relative overflow-hidden flex flex-col justify-between group">
+                    <div class="absolute top-3 right-3 z-10 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white font-gaming font-black text-[10px] px-3 py-1 rounded-full uppercase shadow-md">
+                        Desafiante Lvl 82
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Widescreen 16:9 Aspect Ratio Container -->
+                        <div class="relative aspect-video w-full rounded-xl overflow-hidden border border-red-500/30 bg-slate-950">
+                            <!-- Image with onerror fallback -->
+                            <img src="conta3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/e11d48?text=CONTA+TOP+CRIMINAL+VERMELHO';" alt="Conta Top Criminal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between z-10">
+                                <span class="bg-slate-900/90 text-amber-300 border border-amber-500/40 text-xs font-bold px-2.5 py-1 rounded-lg font-gaming flex items-center gap-1">
+                                    <i class="fa-solid fa-gem text-cyan-400"></i> 9 Diams
+                                </span>
+                                <span class="bg-emerald-500/90 text-slate-950 text-xs font-black px-2.5 py-1 rounded-lg font-gaming">
+                                    GRÁTIS
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-gaming font-bold text-slate-100 group-hover:text-red-400 transition-colors">
+                                Conta Top Criminal Vermelho + Sombra Roxa
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Doador: <span class="text-slate-300 font-medium">@Babi_LOUD_Official</span> &bull; Coleção Rara Completa
+                            </p>
+                        </div>
+
+                        <!-- Highlights Badges -->
+                        <div class="flex flex-wrap gap-1.5 text-[11px]">
+                            <span class="bg-slate-800/80 text-red-400 px-2.5 py-1 rounded-md border border-slate-700">Top Criminal Vermelho</span>
+                            <span class="bg-slate-800/80 text-purple-300 px-2.5 py-1 rounded-md border border-slate-700">Sombra Roxa Antigo</span>
+                            <span class="bg-slate-800/80 text-amber-300 px-2.5 py-1 rounded-md border border-slate-700">Scar Megalodonte</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button onclick="selectAccountAndClaim('Conta Top Criminal Lvl ', 'conta3.jpg', '9')" class="mt-6 w-full py-3.5 px-4 bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 hover:from-red-500 hover:to-rose-500 text-white font-gaming font-black text-xs md:text-sm tracking-wider uppercase rounded-xl shadow-lg shadow-red-600/30 transition-all transform group-hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden">
+                        <span class="absolute inset-0 bg-white/20 -skew-x-12 animate-shimmer pointer-events-none"></span>
+                        <i class="fa-solid fa-crown text-base"></i>
+                        <span>RESGATAR ESTA CONTA GRÁTIS</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Live Social Proof Feed -->
+            <div class="max-w-xl mx-auto bg-slate-900/60 border border-slate-800/80 p-4 rounded-2xl text-xs space-y-2">
+                <p class="text-slate-400 font-subheading uppercase tracking-widest font-bold text-[11px] text-center">
+                    <i class="fa-solid fa-circle text-emerald-500 animate-ping mr-1.5"></i>
+                    ÚLTIMAS CONTAS RESGATADAS AGORA MESMO
+                </p>
+                <div class="space-y-1.5 text-left font-mono">
+                    <div class="bg-slate-950/70 p-2 rounded-lg border border-slate-800 flex justify-between items-center text-[11px]">
+                        <span class="text-amber-400 font-bold">@Matheus_RJ</span>
+                        <span class="text-slate-300">Resgatou Conta Angelical #39</span>
+                        <span class="text-emerald-400 text-[10px]">há 14 segundos</span>
+                    </div>
+                    <div class="bg-slate-950/70 p-2 rounded-lg border border-slate-800 flex justify-between items-center text-[11px]">
+                        <span class="text-amber-400 font-bold">@Bruna_Gamer</span>
+                        <span class="text-slate-300">Resgatou Conta Lvl 80</span>
+                        <span class="text-emerald-400 text-[10px]">há 42 segundos</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             PASSO 2: TELA DE CARREGAMENTO / ALOCAÇÃO
+             ========================================== -->
+        <section id="step2" class="hidden text-center space-y-6 py-12 transition-all duration-500">
+            <div class="max-w-md mx-auto glass-panel border-2 border-orange-500/50 rounded-3xl p-8 glow-box-orange relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-orange-500/10 to-transparent pointer-events-none"></div>
+
+                <!-- High Tech Radar animation -->
+                <div class="relative w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                    <div class="absolute inset-0 rounded-full border-2 border-dashed border-orange-500 animate-spin"></div>
+                    <div class="absolute inset-3 rounded-full border-2 border-amber-400/40 animate-ping"></div>
+                    <div class="w-20 h-20 bg-slate-950 rounded-full border-2 border-amber-400 flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-server text-4xl text-amber-400 animate-pulse"></i>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-gaming font-extrabold text-amber-400 mb-1 glow-text-gold">
+                    PROCESSANDO DOAÇÃO...
+                </h2>
+                <p id="searchStatus" class="text-xs font-mono text-slate-300 mb-6 h-6">Iniciando protocolo de transferência de dados...</p>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-950 rounded-full h-4 p-1 border border-slate-800 mb-3 overflow-hidden shadow-inner">
+                    <div id="progressBar" class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 h-full rounded-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <div class="flex justify-between items-center text-xs font-mono font-bold text-amber-400 px-1">
+                    <span>STATUS: CONECTADO</span>
+                    <span id="progressPercentage">0%</span>
+                </div>
+
+                <!-- Terminal simulation -->
+                <div class="mt-6 text-left bg-slate-950 p-3.5 rounded-xl border border-slate-800 text-[11px] font-mono text-slate-400 space-y-1.5 h-28 overflow-hidden shadow-lg">
+                    <p class="text-emerald-400">> ALLOCATING_DONATION_SLOT...</p>
+                    <p id="log1" class="opacity-0 transition-opacity text-slate-300">> Reservando e-mail de acesso seguro...</p>
+                    <p id="log2" class="opacity-0 transition-opacity text-amber-400">> Vins_token = FF_TOKEN_9482104</p>
+                    <p id="log3" class="opacity-0 transition-opacity text-emerald-400 font-bold">> SUCESSO! Conta pronta para liberação instantânea.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PASSO 3: CONTA BLOQUEADA & REDIRECIONAMENTO
+             ========================================== -->
+        <section id="step3" class="hidden space-y-6 text-center transition-all duration-500">
+            <div class="max-w-2xl mx-auto glass-panel border-2 border-red-500/70 rounded-3xl p-6 md:p-8 glow-box-red relative overflow-hidden space-y-6">
+                
+                <!-- Status Badge Header -->
+                <div class="inline-flex items-center gap-2 bg-red-950/90 border border-red-500 px-4 py-1.5 rounded-full text-red-400 font-gaming text-xs font-bold tracking-widest uppercase animate-pulse">
+                    <i class="fa-solid fa-lock text-sm"></i> ETAPA FINAL: CONTA AGUARDANDO LIBERAÇÃO
+                </div>
+
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-gaming font-extrabold text-slate-100 uppercase tracking-wide">
+                        Sua Conta Foi Reservada!
+                    </h2>
+                    <p class="text-xs text-slate-300 font-subheading mt-1">
+                        A conta selecionada já foi alocada exclusivamente para você no servidor BR.
+                    </p>
+                </div>
+
+                <!-- Selected Account Preview Card -->
+                <div class="bg-slate-950/90 rounded-2xl border border-slate-800 p-4 text-left relative overflow-hidden shadow-2xl space-y-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-5">
+                        
+                        <!-- Dynamic Wide Widescreen Image Container -->
+                        <div class="relative w-full sm:w-72 aspect-video rounded-xl overflow-hidden border-2 border-amber-400 shrink-0 bg-slate-900 shadow-md">
+                            <img id="selectedAccountImg" src="conta.jpg" onerror="this.onerror=null; this.src='https://placehold.co/800x450/1e293b/f59e0b?text=FREE+FIRE+PRO+ACCOUNT';" alt="Foto da Conta" class="w-full h-full object-cover">
+                            <span class="absolute bottom-0 inset-x-0 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-[10px] font-black text-center py-1 font-gaming uppercase tracking-wider shadow-md">LVL VETERANO &bull; RESERVADA</span>
+                        </div>
+
+                        <!-- Account Info -->
+                        <div class="space-y-2 w-full text-center sm:text-left">
+                            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                                <h3 class="font-gaming font-bold text-amber-400 text-lg sm:text-xl" id="selectedAccountTitle">Conta Angelical Mestre</h3>
+                                <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded border border-emerald-500/30 font-gaming">PRONTA</span>
+                            </div>
+
+                            <p class="text-xs text-slate-300 flex items-center justify-center sm:justify-start gap-1.5 font-medium">
+                                <i class="fa-solid fa-gem text-cyan-400"></i> Diamantes Incluídos: <span id="selectedAccountDiamonds" class="font-bold text-cyan-400">7</span>
+                            </p>
+
+                            <div class="flex flex-wrap gap-1.5 justify-center sm:justify-start pt-1 text-[10px]">
+                                <span class="bg-slate-800 text-slate-200 px-2.5 py-1 rounded-md border border-slate-700">Login via Facebook/Google</span>
+                                <span class="bg-slate-800 text-slate-200 px-2.5 py-1 rounded-md border border-slate-700">Acesso Total & Senha</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fake Lock Tax Explanation -->
+                <div class="bg-amber-500/10 border border-amber-500/40 p-4.5 rounded-2xl text-left space-y-2.5">
+                    <p class="text-xs font-bold text-amber-400 flex items-center gap-2 font-gaming">
+                        <i class="fa-solid fa-shield-halved text-amber-400 text-base"></i>
+                        VERIFICAÇÃO HUMANA ANTIBOT OBRIGATÓRIA
+                    </p>
+                    <p class="text-xs text-slate-200 leading-relaxed">
+                        Para evitar que programas automatizados roubem todas as contas doadas, solicitamos o pagamento de uma pequena taxa de verificação no valor de apenas <strong class="text-emerald-400 font-bold text-sm">R$ 7,99</strong>.
+                    </p>
+                    <div class="bg-emerald-950/60 border border-emerald-500/30 p-2.5 rounded-xl text-[11px] text-emerald-300 font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-sm shrink-0"></i>
+                        <span><strong>REEMBOLSO GARANTIDO:</strong> O valor de R$ 7,99 será automaticamente estornado via PIX logo após o envio da senha!</span>
+                    </div>
+                </div>
+
+                <!-- Unlock Payment Button -> Redirects to Educational External Website -->
+                <button onclick="redirectToWarningSite()" class="w-full py-4 px-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-gaming font-black text-sm md:text-base tracking-wider uppercase rounded-xl shadow-xl shadow-emerald-500/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 relative overflow-hidden">
+                    <span class="absolute inset-0 bg-white/20 -skew-x-12 animate-shimmer pointer-events-none"></span>
+                    <i class="fa-solid fa-unlock text-xl"></i>
+                    <span>DESBLOQUEAR CONTA AGORA POR R$ 7,99</span>
+                </button>
+                
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest font-mono">
+                    Pagamento 100% Seguro via PIX &bull; Liberação em menos de 30 segundos
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-slate-900 bg-slate-950/90 py-5 px-4 text-center text-slate-500 text-xs space-y-1 backdrop-blur-md">
+        <p>© Simulador Educativo de Prevenção a Engenharia Social & Psicologia Digital.</p>
+        <p class="text-[10px] text-slate-600">Este site é puramente demonstrativo para conscientização pública. Nenhum dinheiro real é transacionado aqui.</p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // BACKGROUND CANVAS ANIMATION (Cyber Particles)
+        const canvas = document.getElementById('bgParticles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedY = Math.random() * 0.7 + 0.2;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.color = Math.random() > 0.5 ? '#ff6b00' : '#ffb800';
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < 0) {
+                    this.y = canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < 45; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // STEP TRANSITION LOGIC
+        function showStep(stepNumber) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+
+            document.getElementById(`step${stepNumber}`).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        let selectedAccTitle = "Conta Angelical Mestre";
+        let selectedAccImg = "conta.jpg";
+        let selectedAccDiamonds = "18.500";
+
+        // SELECT ACCOUNT & START FAKE LOADING
+        function selectAccountAndClaim(title, imgUrl, diamonds) {
+            selectedAccTitle = title;
+            selectedAccImg = imgUrl;
+            selectedAccDiamonds = diamonds || "18.500";
+
+            // Update Step 3 elements with selected card details
+            document.getElementById('selectedAccountTitle').innerText = title;
+            document.getElementById('selectedAccountDiamonds').innerText = selectedAccDiamonds;
+            
+            const imgElem = document.getElementById('selectedAccountImg');
+            imgElem.src = imgUrl;
+            imgElem.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://placehold.co/800x450/1e293b/f59e0b?text=FREE+FIRE+PRO+ACCOUNT';
+            };
+
+            showStep(2);
+
+            const progressBar = document.getElementById('progressBar');
+            const progressPercentage = document.getElementById('progressPercentage');
+            const searchStatus = document.getElementById('searchStatus');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 15) + 6;
+                if (progress > 100) progress = 100;
+
+                progressBar.style.width = `${progress}%`;
+                progressPercentage.innerText = `${progress}%`;
+
+                if (progress >= 20 && progress < 50) {
+                    searchStatus.innerText = "Reservando dados de login e inventário...";
+                    document.getElementById('log1').classList.remove('opacity-0');
+                } else if (progress >= 50 && progress < 80) {
+                    searchStatus.innerText = "Gerando credenciais de acesso seguro...";
+                    document.getElementById('log2').classList.remove('opacity-0');
+                } else if (progress >= 80) {
+                    searchStatus.innerText = "Resgate preparado! Finalizando validação...";
+                    document.getElementById('log3').classList.remove('opacity-0');
+                }
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        showStep(3);
+                    }, 700);
+                }
+            }, 250);
+        }
+
+        // REDIRECT TO EXTERNAL EDUCATIONAL WEBSITE
+        function redirectToWarningSite() {
+            window.location.href = "https://testandosite.com.br";
+        }
+    </script>
+</body>
+</html>
