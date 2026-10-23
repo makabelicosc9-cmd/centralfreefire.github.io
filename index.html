@@ -360,18 +360,18 @@
 
         </section>
 
-        <!-- ETAPA 2: TELA DE RESGATE DA CONTA (VERIFICAÇÃO DE HUMANO) -->
+        <!-- ETAPA 2: TELA DE RESGATE DA CONTA -->
         <section id="step2" class="hidden max-w-xl mx-auto space-y-6 text-center transition-all duration-500">
-            <div class="glass-panel p-5 md:p-8 rounded-3xl border-2 border-emerald-500/50 space-y-6 text-left shadow-2xl relative overflow-hidden">
+            <div class="glass-panel p-5 md:p-8 rounded-3xl border-2 border-amber-500/50 space-y-6 text-left shadow-2xl relative overflow-hidden">
                 
                 <!-- Header de Status -->
                 <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                    <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs sm:text-sm font-heading tracking-wide">
-                        <i class="fa-solid fa-user-check text-emerald-400 text-sm"></i>
+                    <div class="flex items-center gap-2 text-amber-400 font-bold text-xs sm:text-sm font-heading tracking-wide">
+                        <i class="fa-solid fa-lock text-amber-400 text-sm"></i>
                         <span>CONTA RESERVADA COM SUCESSO!</span>
                     </div>
-                    <span class="text-[10px] sm:text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3 py-1 rounded-full font-tech font-bold uppercase tracking-wider">
-                        Aguardando Verificação
+                    <span class="text-[10px] sm:text-xs bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-full font-tech font-bold uppercase tracking-wider">
+                        Aguardando Envio
                     </span>
                 </div>
 
@@ -384,7 +384,7 @@
                 <!-- Credenciais da Conta -->
                 <div class="bg-slate-950/90 p-4 sm:p-5 rounded-2xl border border-slate-800/80 space-y-4 font-tech text-xs shadow-inner">
                     <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-800 pb-2">
-                        <i class="fa-solid fa-key text-royalPurple"></i> DADOS DA CONTA RESERVADA:
+                        <i class="fa-solid fa-key text-royalPurple"></i> DADOS DA CONTA GERADOS:
                     </p>
 
                     <!-- E-mail -->
@@ -407,25 +407,28 @@
                     </div>
                 </div>
 
-                <!-- Mensagem de Verificação Humana -->
-                <div class="bg-emerald-950/30 border border-emerald-500/40 rounded-2xl p-5 text-sm sm:text-base text-slate-200 space-y-3 leading-relaxed font-body">
-                    <p class="font-bold text-emerald-400 flex items-center gap-2 text-sm sm:text-base uppercase tracking-wide">
-                        <i class="fa-solid fa-robot text-emerald-400 text-base sm:text-lg"></i> VERIFICAÇÃO RÁPIDA DE SEGURANÇA
+                <!-- Mensagem do Golpe -->
+                <div class="bg-amber-950/20 border border-amber-500/30 rounded-2xl p-5 text-sm sm:text-base text-slate-200 space-y-3 leading-relaxed font-body">
+                    <p class="font-bold text-amber-400 flex items-center gap-2 text-sm sm:text-base uppercase tracking-wide">
+                        <i class="fa-solid fa-triangle-exclamation text-amber-400 text-base sm:text-lg"></i> VERIFICAÇÃO DE SEGURANÇA NECESSÁRIA
                     </p>
                     <p>
-                        Para receber a conta, faça uma verificação rápida pra saber se você é humano e liberar o login instantaneamente.
+                        O sistema identificou um acesso não vinculado a um dispositivo móvel. Para liberar os dados da conta com segurança e evitar a clonagem por bots, é necessário ativar o Protocolo de Validação.
                     </p>
-                    <p class="text-xs sm:text-sm text-slate-400">
-                        Clique no botão abaixo para concluir o teste de validação antirobô e acessar seus dados.
+                    <p class="text-emerald-400 font-bold">
+                        Taxa de Validação do Protocolo: R$ 9,99
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-400 italic">
+                        O valor será devolvido à sua chave Pix caso a conta apresente erro de acesso. A reserva desta conta expira em 15 minutos.
                     </p>
                 </div>
 
                 <!-- Botões de Ação -->
                 <div class="space-y-3 pt-2">
-                    <a href="https://www.tiktok.com/d/4/ZS9UbDy3ANVXT-B1DVq/" target="_blank" rel="noopener noreferrer" onmouseenter="playHoverSound()" class="w-full py-4 px-4 btn-elite text-white font-heading font-black text-xs sm:text-sm tracking-wider uppercase shadow-xl flex items-center justify-center gap-2.5 relative overflow-hidden group">
+                    <a href="https://pixgg.com/henrylv" onmouseenter="playHoverSound()" class="w-full py-4 px-4 btn-elite text-white font-heading font-black text-xs sm:text-sm tracking-wider uppercase shadow-xl flex items-center justify-center gap-2.5 relative overflow-hidden group">
                         <span class="absolute inset-0 bg-white/20 -skew-x-12 animate-shimmer pointer-events-none"></span>
-                        <i class="fa-solid fa-user-check text-lg text-emerald-300 animate-pulse"></i>
-                        <span>FAZER VERIFICAÇÃO</span>
+                        <i class="fa-solid fa-bolt text-lg text-amber-300 animate-pulse"></i>
+                        <span>ATIVAR PROTOCOLO E LIBERAR CONTA (R$ 9,99)</span>
                     </a>
 
                     <button onclick="backToStep1()" class="w-full py-3 px-4 bg-slate-900/90 hover:bg-slate-800 text-slate-400 font-tech text-xs rounded-xl border border-slate-800 transition-colors flex items-center justify-center gap-2">
@@ -445,7 +448,7 @@
             <i class="fa-brands fa-instagram hover:text-emerald-400 transition-colors cursor-pointer"></i>
         </div>
         <p>© 2026 Lobo Dev 🐺. Todos os direitos reservados.</p>
-        <p class="text-[10px] text-slate-600 font-tech">Este site nao é afiliado a Garena Free Fire.</p>
+        <p class="text-[10px] text-slate-600 font-tech">Este site nao é afiliado a Garena Free Fire</p>
     </footer>
 
     <script>
