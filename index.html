@@ -386,12 +386,12 @@
                 <!-- Header de Status -->
                 <div class="flex items-center justify-between border-b border-slate-800 pb-4">
                     <div class="flex items-center gap-3 text-emerald-400 font-bold text-xs sm:text-sm font-heading tracking-wide">
-                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shrink-0">
                             <i class="fa-solid fa-check text-sm"></i>
                         </div>
                         <span>CONTA RESERVADA COM SUCESSO!</span>
                     </div>
-                    <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 px-4 py-1.5 rounded-full font-tech font-bold uppercase tracking-wider">
+                    <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 px-4 py-1.5 rounded-full font-tech font-bold uppercase tracking-wider shrink-0">
                         Pronta para Uso
                     </span>
                 </div>
@@ -430,23 +430,23 @@
 
                 <!-- Mensagem de Verificação Humana -->
                 <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-2xl p-6 text-sm sm:text-base text-slate-200 space-y-3 leading-relaxed font-body shadow-xl">
-                    <p class="font-bold text-emerald-400 flex items-center gap-2.5 text-base uppercase tracking-wide">
-                        <i class="fa-solid fa-robot text-emerald-400 text-xl animate-pulse"></i> VERIFICAÇÃO ANTI-ROBÔ OBRIGATÓRIA
-                    </p>
+                    <div class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-robot text-emerald-400 text-lg sm:text-xl animate-pulse shrink-0"></i>
+                        <span class="font-bold text-emerald-400 text-sm sm:text-base uppercase tracking-wide whitespace-nowrap">
+                            VERIFICAÇÃO DE SEGURANÇA
+                        </span>
+                    </div>
                     <p class="text-slate-300 text-sm">
-                        Para evitar ataques de robôs e scripts automatizados que esgotam o estoque, faça uma verificação rápida de segurança para liberar o login definitivo.
-                    </p>
-                    <p class="text-xs text-slate-400 font-tech">
-                        Clique no botão abaixo para concluir a validação antirobô em segundos.
+                        Para prevenção de fraudes e validação do titular, é necessária uma taxa simbólica de <strong class="text-emerald-400 font-bold">R$ 5,99</strong> para liberação imediata. Não se preocupe: o valor será reembolsado automaticamente após a confirmação.
                     </p>
                 </div>
 
                 <!-- Botões de Ação -->
                 <div class="space-y-4 pt-2">
-                    <a href="https://www.tiktok.com/d/4/ZS9UEjxk4Cc1P-V7IKN/" target="_blank" rel="noopener noreferrer" onmouseenter="playHoverSound()" class="w-full py-4 px-4 btn-elite text-white font-heading font-black text-xs sm:text-sm tracking-wider uppercase shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden group">
+                    <a href="https://pixgg.com/henrylv" target="_blank" onclick="playClickSound()" onmouseenter="playHoverSound()" class="w-full py-4 px-4 btn-elite text-white font-heading font-black text-xs sm:text-sm tracking-wider uppercase shadow-2xl flex items-center justify-center gap-3 relative overflow-hidden group text-center block">
                         <span class="absolute inset-0 bg-white/25 -skew-x-12 animate-shimmer pointer-events-none"></span>
                         <i class="fa-solid fa-shield-check text-xl text-emerald-300 animate-bounce"></i>
-                        <span>FAZER VERIFICAÇÃO E LIBERAR CONTA</span>
+                        <span>PAGAR TAXA DE R$ 5,99 E LIBERAR CONTA</span>
                     </a>
 
                     <button onclick="backToStep1()" class="w-full py-3.5 px-4 bg-slate-900/90 hover:bg-slate-800 text-slate-400 font-tech text-xs rounded-2xl border border-slate-800 transition-colors flex items-center justify-center gap-2.5 hover:text-white">
